@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucy — Product Designer</title>
+<meta name="description" content="Lucy is a product designer building calm, useful and quietly beautiful software.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;450;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- custom cursor -->
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- liquid distortion filters -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- continuous subtle fluid on the portrait -->
+  <filter id="liquidPortrait">
+    <feTurbulence type="fractalNoise" baseFrequency="0.006 0.011" numOctaves="2" seed="7" result="n">
+      <animate attributeName="baseFrequency" dur="26s" values="0.006 0.011;0.011 0.006;0.006 0.011" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <!-- pulse on project-thumb hover (scale driven by JS) -->
+  <filter id="liquid">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.016" numOctaves="2" seed="4" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <a class="brand" href="#top">Lucy<sup>®</sup></a>
+  <nav class="nav" aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="status mono"><span class="dot-live"></span> Available — Summer ’26</div>
+  <button class="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<!-- mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#work"><span>01</span>Work</a>
+  <a href="#about"><span>02</span>About</a>
+  <a href="#services"><span>03</span>Services</a>
+  <a href="#contact"><span>04</span>Contact</a>
+  <div class="mn-foot mono muted"><span>Lisbon — 38.7°N</span><span>hello@lucy.design</span></div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    <div class="hero-top">
+      <div class="col mono muted">
+        <p>Product Designer<br>Independent · since 2017</p>
+      </div>
+      <div class="col mono muted" style="text-align:right">
+        <p>Based in Lisbon<br>Working worldwide</p>
+      </div>
+    </div>
+
+    <div class="hero-inner wrap">
+      <h1 class="hero-title" aria-label="Lucy — Product Designer">
+        <span class="line"><span>Product</span></span>
+        <span class="line"><span class="thin">Designer</span></span>
+        <span class="line"><span>&amp; <em>maker.</em></span></span>
+      </h1>
+      <div class="hero-foot">
+        <p>I help ambitious teams turn complex, fuzzy problems into interfaces people actually love — from the first rough sketch to the shipped, polished product.</p>
+        <div class="scroll-cue mono muted"><span class="bar"></span> Scroll to explore</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Product Strategy</span><span>Interaction Design</span><span>Design Systems</span><span>Prototyping</span><span>Brand &amp; UI</span>
+      <span>Product Strategy</span><span>Interaction Design</span><span>Design Systems</span><span>Prototyping</span><span>Brand &amp; UI</span>
+    </div>
+  </div>
+
+  <!-- ============ WORK ============ -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="reveal">Selected<br>Work</h2>
+        <span class="mono idx reveal">(04) — 2023–26</span>
+      </div>
+
+      <div class="work-grid">
+        <a class="proj reveal" href="#" data-thumb="atlas" data-seed="11">
+          <div class="thumb-wrap"><canvas class="thumb"></canvas><span class="view">View case study →</span></div>
+          <div class="meta">
+            <h3><span class="num">01</span> Atlas <span class="arrow">↗</span></h3>
+            <span class="yr mono">’25</span>
+          </div>
+          <ul class="tags mono"><li>Design System</li><li>Web App</li><li>Lead</li></ul>
+          <p class="desc">A unified design language and component library for a neobank operating across 14 markets.</p>
+        </a>
+
+        <a class="proj reveal" href="#" data-thumb="tide" data-seed="29">
+          <div class="thumb-wrap"><canvas class="thumb"></canvas><span class="view">View case study →</span></div>
+          <div class="meta">
+            <h3><span class="num">02</span> Tide <span class="arrow">↗</span></h3>
+            <span class="yr mono">’24</span>
+          </div>
+          <ul class="tags mono"><li>Mobile</li><li>UX</li><li>0→1</li></ul>
+          <p class="desc">Rebuilding the onboarding for a savings app — cutting drop-off in half with a calmer, guided flow.</p>
+        </a>
+
+        <a class="proj reveal" href="#" data-thumb="mono" data-seed="47">
+          <div class="thumb-wrap"><canvas class="thumb"></canvas><span class="view">View case study →</span></div>
+          <div class="meta">
+            <h3><span class="num">03</span> Mono <span class="arrow">↗</span></h3>
+            <span class="yr mono">’24</span>
+          </div>
+          <ul class="tags mono"><li>iOS</li><li>Product</li><li>Motion</li></ul>
+          <p class="desc">A focus &amp; habit companion that turns intention into gentle, daily momentum.</p>
+        </a>
+
+        <a class="proj reveal" href="#" data-thumb="verre" data-seed="63">
+          <div class="thumb-wrap"><canvas class="thumb"></canvas><span class="view">View case study →</span></div>
+          <div class="meta">
+            <h3><span class="num">04</span> Verre <span class="arrow">↗</span></h3>
+            <span class="yr mono">’23</span>
+          </div>
+          <ul class="tags mono"><li>E-commerce</li><li>Brand</li><li>UI</li></ul>
+          <p class="desc">A storefront and identity for a collective of independent ceramic studios.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <p class="mono idx reveal" style="color:var(--accent)">(About)</p>
+        <p class="lede reveal">I’m Lucy — a product designer who believes the best interfaces feel <b>obvious in hindsight.</b> Calm, considered, and quietly opinionated.</p>
+        <p class="body reveal">For nearly a decade I’ve partnered with founders and product teams to shape software from the ground up. I sit comfortably between research, systems thinking and pixel-level craft — translating messy reality into products that are a pleasure to use and a joy to maintain.</p>
+        <dl class="facts reveal">
+          <div><dt class="mono">Experience</dt><dd>9 years</dd></div>
+          <div><dt class="mono">Shipped</dt><dd>40+ products</dd></div>
+          <div><dt class="mono">Based in</dt><dd>Lisbon</dd></div>
+        </dl>
+      </div>
+      <figure class="portrait reveal">
+        <canvas id="portrait-canvas"></canvas>
+        <figcaption class="mono">Lucy, 2026</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services">
+    <div class="wrap services">
+      <div class="sec-head" style="border-bottom:none;padding-bottom:0">
+        <h2 class="reveal">What I do</h2>
+        <span class="mono idx reveal">(Capabilities)</span>
+      </div>
+      <div style="margin-top:clamp(24px,3vw,40px)">
+        <div class="srv reveal"><span class="n">01</span><h3>Product Strategy</h3><p>Framing the problem, research, roadmaps and the bets worth making.</p></div>
+        <div class="srv reveal"><span class="n">02</span><h3>Interaction &amp; UX</h3><p>Flows, wireframes, prototypes and usability that earns trust.</p></div>
+        <div class="srv reveal"><span class="n">03</span><h3>Interface &amp; Motion</h3><p>High-fidelity UI with the detail and motion that make it sing.</p></div>
+        <div class="srv reveal"><span class="n">04</span><h3>Design Systems</h3><p>Scalable, documented component libraries teams love to build on.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <p class="eyebrow mono reveal">(Contact) — Open for select projects in 2026</p>
+      <h2 class="big reveal">Let’s build<br>something good.</h2>
+      <a class="mail" href="mailto:hello@lucy.design">hello@lucy.design <span class="arrow">↗</span></a>
+      <div class="foot">
+        <div class="socials mono">
+          <a href="#">Are.na</a><a href="#">Read.cv</a><a href="#">LinkedIn</a><a href="#">Instagram</a>
+        </div>
+        <div class="mono" style="text-align:right">
+          <p>© <span id="year"></span> Lucy. Designed &amp; built with care.</p>
+          <a href="#top" class="to-top">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/thumbs.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
